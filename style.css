@@ -301,3 +301,203 @@ body{overflow-x:hidden}
   }
   .reveal-image{clip-path:none!important;transform:none!important}
 }
+
+/* =========================================================
+   MOBILE JAPANESE TYPOGRAPHY — semantic wrapping
+   ========================================================= */
+.mobile-line{display:inline}
+.phrase{white-space:normal}
+
+@media(max-width:800px){
+  /* Body copy: slightly wider measure, tighter tracking, calmer rhythm */
+  .section{padding-left:7.5vw;padding-right:7.5vw}
+  .section .lead,
+  .section .two p,
+  .land p,
+  .future p{
+    font-size:14.5px;
+    line-height:2.05;
+    letter-spacing:.012em;
+    max-width:none;
+    word-break:auto-phrase;
+    line-break:strict;
+    overflow-wrap:normal;
+  }
+
+  .two{gap:34px}
+
+  /* Meaning-based headings. Desktop remains natural/inline. */
+  .section h2,
+  .land h2,
+  .future h2,
+  .entrance h2,
+  .living h2{
+    letter-spacing:.01em;
+    word-break:keep-all;
+    overflow-wrap:normal;
+    text-wrap:balance;
+  }
+  .mobile-line{display:block}
+  .mobile-line + .mobile-line{margin-top:.08em}
+
+  /* HERO and closing concept must never split one of the three verbs. */
+  .hero h1{
+    word-break:keep-all;
+    overflow-wrap:normal;
+  }
+  .closing-concept{
+    word-break:keep-all;
+    overflow-wrap:normal;
+    line-height:1.55!important;
+  }
+
+  /* Keep key technical/product words intact where space permits. */
+  .phrase{
+    white-space:nowrap;
+  }
+
+  /* Section-label consistency */
+  .eyebrow{
+    line-height:1.45;
+    margin-bottom:26px;
+  }
+  .line-reveal{gap:13px}
+  .line-reveal::after{width:58px;flex:0 0 58px}
+
+  /* Owner section reads less like a narrow newspaper column */
+  .future{padding-left:7.5vw;padding-right:7.5vw}
+  .future>div{max-width:none}
+
+  /* Slightly reduce vertical excess created by semantic title breaks */
+  .section h2,.land h2,.future h2,.entrance h2,.living h2{
+    margin-bottom:42px;
+  }
+}
+
+/* Narrow iPhone / compact Android widths */
+@media(max-width:380px){
+  .section h2,
+  .land h2,
+  .future h2,
+  .entrance h2,
+  .living h2{
+    font-size:clamp(29px,8.6vw,40px);
+    line-height:1.45;
+  }
+  .hero h1{
+    font-size:clamp(48px,15vw,72px);
+  }
+  .section .lead,
+  .section .two p,
+  .land p,
+  .future p{
+    font-size:14px;
+    line-height:2;
+  }
+  .phrase{white-space:normal}
+}
+
+/* ===== 2026-09 REVISED LP ===== */
+:root{--warm:#b18355;--warm-soft:#f1ece5;--charcoal:#1b1c1d}
+.home-icon{width:48px;height:38px;overflow:hidden;display:block}.home-icon img{object-fit:contain;filter:grayscale(1) contrast(1.15);opacity:.85}
+.sp-only{display:none}
+.concept-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);margin-top:90px;background:#fff}
+.concept-card{padding:46px 38px;border-right:1px solid var(--line)}.concept-card:last-child{border-right:0}.concept-card .num{font-size:10px;letter-spacing:.2em;color:#888}.concept-card h3{font:500 31px/1.3 "Noto Serif JP";margin:28px 0 34px}.concept-pair{border-top:1px solid #e7e7e7;padding-top:22px;margin-top:22px}.concept-pair b{display:block;font-size:9px;letter-spacing:.22em;color:var(--warm);margin-bottom:10px}.concept-pair p{margin:0;font-size:13px;line-height:1.9;color:#444}
+.site-gallery{display:grid;grid-template-columns:1.5fr 1fr;gap:1px;background:#ddd}.site-gallery figure{margin:0;background:#fff;min-height:520px;position:relative;overflow:hidden}.site-gallery img{object-fit:contain;background:#fff;padding:18px}.site-gallery figcaption,.study-sequence figcaption{position:absolute;left:22px;bottom:18px;background:rgba(255,255,255,.86);backdrop-filter:blur(6px);padding:8px 10px;font-size:8px;letter-spacing:.16em;color:#555}
+.study-sequence{display:grid;grid-template-columns:.9fr 1.1fr 1.25fr;gap:12px;margin-top:70px}.study-sequence figure{margin:0;position:relative;height:420px;border:1px solid #ececec;overflow:hidden;background:#fff}.study-sequence .contain{object-fit:contain;background:#fff}
+.exterior-gallery{background:#f8f8f8;padding:0}.exterior-main{height:68vw;max-height:860px;overflow:hidden}.exterior-main img{object-fit:cover}.exterior-sub{display:grid;grid-template-columns:1fr 1fr;height:46vw;max-height:650px;gap:1px;background:#ddd;overflow:hidden}
+.commons{background:#fff}.commons-visual{height:62vw;max-height:840px;overflow:hidden}.commons-visual img{object-fit:cover}.commons-program{display:grid;grid-template-columns:.82fr 1.18fr;gap:8vw;align-items:center}.commons-program figure{margin:0;height:620px;overflow:hidden}.program-copy .time,.community-inner .time{font-size:10px;letter-spacing:.24em;color:var(--warm);font-weight:600}.program-copy h3,.community-inner h3{font:500 clamp(32px,4vw,58px)/1.4 "Noto Serif JP";margin:22px 0 30px}.program-copy p,.community-inner p{font-size:14px;line-height:2.15;color:#444}.community-band{background:var(--charcoal);color:#fff;padding:130px 7vw}.community-inner{max-width:930px;margin:0 auto}.community-inner .time{color:#d9b892}.community-inner p{color:#e5e5e5;max-width:760px}.community-inner .note{font-size:11px;color:#a9a9a9;margin-top:28px}.commons .chips{margin-top:34px}
+.future{background:var(--charcoal)!important;color:#fff!important}.future .eyebrow{color:#ddd}.future-inner{max-width:1000px;margin:auto;padding:145px 7vw}.future h2{color:#fff}.future p{color:#d7d7d7;max-width:820px}.future p+p{margin-top:22px}
+.closing-icon{display:block;width:170px;height:125px;margin:0 auto 30px}.closing-icon img{object-fit:contain;filter:grayscale(1) contrast(1.15)}
+
+@media(max-width:800px){
+  .sp-only{display:block}
+  .top nav{gap:14px}.top nav a:nth-child(2),.top nav a:nth-child(5){display:none}
+  .home-icon{width:42px}
+  .concept-grid{display:block;margin-top:55px}.concept-card{border-right:0;border-bottom:1px solid var(--line);padding:34px 0}.concept-card:last-child{border-bottom:0}.concept-card h3{font-size:28px}
+  .site-gallery{grid-template-columns:1fr}.site-gallery figure{min-height:360px}.site-gallery img{padding:10px}
+  .study-sequence{grid-template-columns:1fr;margin-top:48px}.study-sequence figure{height:auto;aspect-ratio:4/3}.study-sequence figure:last-child{aspect-ratio:4/3}
+  .exterior-main{height:84vw}.exterior-sub{grid-template-columns:1fr;height:auto}.exterior-sub img{height:72vw}
+  .commons-visual{height:72vw}.commons-program{grid-template-columns:1fr;gap:42px}.commons-program figure{height:auto;aspect-ratio:4/3}.community-band{padding:90px 7.5vw}.program-copy h3,.community-inner h3{font-size:34px}
+  .future-inner{padding:100px 7.5vw}
+  .closing-icon{width:130px;height:95px}
+}
+
+/* ===== 2026-09-12 revision ===== */
+.hero .hero-img{object-position:center 58%}
+.hero .shade{background:linear-gradient(90deg,rgba(8,10,14,.56),rgba(8,10,14,.08) 72%)}
+
+.concept-dual{margin-top:90px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.concept-axis-label{padding:16px 18px;font-size:9px;letter-spacing:.24em;text-align:center;color:#777;background:#faf9f6}
+.concept-axis-label-top{border-bottom:1px solid var(--line)}
+.concept-axis-label-bottom{border-top:1px solid var(--line);color:var(--warm)}
+.concept-dual-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.dual-card{min-width:0;border-right:1px solid var(--line);display:grid;grid-template-rows:minmax(170px,auto) auto minmax(170px,auto)}
+.dual-card:last-child{border-right:0}
+.dual-card h3{margin:0;padding:34px 26px;text-align:center;font:500 clamp(31px,3vw,48px)/1.2 "Noto Serif JP";border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fcfbf8}
+.dual-meaning{padding:34px 30px}
+.dual-meaning span{display:block;font-size:9px;letter-spacing:.21em;margin-bottom:14px;font-weight:600}
+.dual-meaning p{margin:0;font-size:13px;line-height:1.95;color:#444}
+.land-side span{color:#777}.commons-side span{color:var(--warm)}
+.commons-side{background:linear-gradient(180deg,#fff 0%,#fbf8f3 100%)}
+
+.land{grid-template-columns:.82fr 1.18fr}
+.site-gallery-single{display:block;background:#fff}
+.site-gallery-single figure{min-height:720px;border-left:1px solid #e5e5e5}
+.site-gallery-single img{object-fit:contain;padding:28px;background:#fff}
+
+.design-process-head{margin-top:80px;max-width:760px}
+.design-process-head>span{font-size:9px;letter-spacing:.22em;color:var(--warm);font-weight:600}
+.design-process-head h3{font:500 clamp(30px,3.6vw,52px)/1.35 "Noto Serif JP";margin:16px 0 20px}
+.design-process-head p{font-size:14px;line-height:2;color:#555;margin:0}
+.study-sequence.process-flow{display:grid;grid-template-columns:minmax(0,1fr) 42px minmax(0,1fr) 42px minmax(0,1fr);gap:0;align-items:stretch;margin-top:46px}
+.process-step{border:1px solid #e9e7e2;background:#fff;display:flex;flex-direction:column;min-width:0}
+.process-step figure{margin:0;height:320px;border:0;border-bottom:1px solid #ece9e4;background:#fbfbfa}
+.process-step figure img{width:100%;height:100%;object-fit:cover}
+.process-step figure .contain{object-fit:contain}
+.process-copy{padding:26px 24px 30px}
+.process-copy span{font-size:9px;letter-spacing:.18em;color:#888}
+.process-copy h4{font:500 24px/1.35 "Noto Serif JP";margin:13px 0 14px}
+.process-copy p{margin:0;font-size:12px;line-height:1.9;color:#555}
+.process-arrow{display:flex;align-items:center;justify-content:center;font:300 24px/1 "Noto Serif JP";color:#aaa}
+
+.exterior-story{background:#faf9f6;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.exterior-story-intro{padding-bottom:75px}
+.scene-main{padding:0 3.5vw}
+.scene-main figure,.scene-pair figure{margin:0;position:relative;overflow:hidden;background:#eee}
+.scene-main figure{height:min(58vw,780px)}
+.scene-main figcaption,.scene-pair figcaption{position:absolute;left:24px;bottom:22px;background:rgba(250,249,246,.9);backdrop-filter:blur(7px);padding:12px 14px;display:flex;gap:16px;align-items:center}
+.scene-main figcaption b,.scene-pair figcaption b{font-size:9px;letter-spacing:.19em;font-weight:600}
+.scene-main figcaption span,.scene-pair figcaption span{font:400 12px "Noto Serif JP";color:#444}
+.scene-pair{display:grid;grid-template-columns:1.08fr .92fr;gap:18px;padding-top:24px;padding-bottom:120px}
+.scene-pair figure{height:min(34vw,510px)}
+
+.commons .section.compact h2{max-width:none}
+.commons .section.compact h2 .mobile-line{display:block}
+.community-band{padding:110px 6vw}
+.community-inner{max-width:1280px}
+.community-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:7vw;align-items:center}
+.community-image{margin:0;position:relative;height:min(42vw,620px);overflow:hidden;background:#222}
+.community-image img{width:100%;height:100%;object-fit:cover}
+.community-image figcaption{position:absolute;left:18px;bottom:16px;font-size:8px;letter-spacing:.18em;background:rgba(20,20,20,.72);padding:8px 10px;color:#ddd}
+.community-copy .note{max-width:620px}
+
+@media(max-width:800px){
+  .hero .hero-img{object-position:center center}
+  .concept-dual{margin-top:56px}
+  .concept-dual-grid{grid-template-columns:1fr}
+  .dual-card{border-right:0;border-bottom:1px solid var(--line);grid-template-rows:auto auto auto}
+  .dual-card:last-child{border-bottom:0}
+  .dual-meaning{padding:26px 20px}.dual-card h3{padding:24px 20px;font-size:34px}
+  .site-gallery-single figure{min-height:420px;border-left:0;border-top:1px solid #e5e5e5}
+  .site-gallery-single img{padding:10px}
+  .study-sequence.process-flow{grid-template-columns:1fr;gap:16px}
+  .process-arrow{transform:rotate(90deg);height:24px}
+  .process-step figure{height:auto;aspect-ratio:4/3}
+  .scene-main{padding:0}.scene-main figure{height:76vw;min-height:360px}
+  .scene-pair{grid-template-columns:1fr;padding:16px 0 90px;gap:12px}
+  .scene-pair figure{height:72vw;min-height:330px}
+  .scene-main figcaption,.scene-pair figcaption{left:12px;bottom:12px;right:12px;gap:10px;flex-wrap:wrap}
+  .community-grid{grid-template-columns:1fr;gap:42px}
+  .community-image{height:auto;aspect-ratio:4/3}
+}
